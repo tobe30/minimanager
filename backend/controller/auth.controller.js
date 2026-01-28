@@ -44,8 +44,8 @@ export const Register = async (req, res)=> {
         res.cookie("jwt",token,{
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true, // prevent xss attacks
-            secure: false, // only for https, works with ngrok
-            sameSite: "lax" // allows cross-site cookies
+            secure: true, // only for https, works with ngrok
+            sameSite: "none" // allows cross-site cookies
         
         })
         
@@ -80,9 +80,9 @@ export const login = async (req, res)=> {
             res.cookie("jwt",token,{
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true, // prevent xss attacks
-            secure: false, // only for https, works with ngrok
-            sameSite: "lax" // allows cross-site cookies
-        
+            secure: true, // only for https, works with ngrok
+            sameSite: "none" // allows cross-site cookies
+
         })
 
         res.status(200).json({success: true, user});
@@ -97,8 +97,8 @@ export const login = async (req, res)=> {
 export function logout(req, res) {
   res.clearCookie("jwt", {
     httpOnly: true,
-    secure: false,     
-    sameSite: "lax", 
+    secure: true,     
+    sameSite: "none", 
   });
   res.status(200).json({ success: true, message: "Logout successful" });
 }
