@@ -9,15 +9,26 @@ import RegisterForm from "./pages/Register";
 import LoginForm from "./pages/Login";
 import { Toaster } from "react-hot-toast";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useQuery } from "@tanstack/react-query";
+import { getAuthUser } from "./lib/api";
 
 const App = () => {
+
+
+  const { data: authUser } = useQuery({
+  queryKey: ["authUser"],
+  queryFn: getAuthUser,
+  staleTime: 1000 * 60 * 60, // 1 hour
+  refetchOnWindowFocus: false,
+});
+
   return (
     <>
       <Routes>
         {/* Public */}
         <Route path="/" element={<Landing />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<LoginForm />} />
+         <Route path="/login" element={!authUser ? <LoginForm /> : <Navigate to="/dashboard" replace />} />
+          <Route path="/register" element={!authUser ? <RegisterForm /> : <Navigate to="/dashboard" replace />} />
 
         {/* Protected */}
         <Route element={<ProtectedRoute />}>

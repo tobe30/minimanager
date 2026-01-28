@@ -16,7 +16,7 @@ const ProtectedRoute = () => {
 
   // ❌ Not logged in
   if (!authUser) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace/>;
   }
 
   // ✅ Logged in
