@@ -12,7 +12,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173", // local dev
-    "https://minimanager.vercel.app/" // production frontend URL
+    "https://minimanager.vercel.app" // production frontend URL
   ],
   credentials: true,
 }));
