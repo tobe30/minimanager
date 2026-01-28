@@ -11,3 +11,6 @@
   --color-primary: #070d1b; /* your primary color */
   --color-primary-foreground: #fff; /* text color for primary buttons */
 }
+html {
+  scroll-behavior: smooth;
+}

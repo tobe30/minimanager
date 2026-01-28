@@ -99,10 +99,10 @@ const Landing = () => {
               <span className="font-bold text-lg sm:text-xl text-white">MiniManager</span>
             </div>
             <div className="hidden md:flex items-center gap-10">
-              <a href="#solutions" className="text-sm text-gray-400 hover:text-[hsl(var(--hero-foreground))] transition-colors">Solutions</a>
-              <a href="#features" className="text-sm text-gray-400 hover:text-[hsl(var(--hero-foreground))] transition-colors">Features</a>
-              <a href="#about" className="text-sm text-gray-400 hover:text-[hsl(var(--hero-foreground))] transition-colors">About</a>
-              <a href="#contact" className="text-sm text-gray-400 hover:text-[hsl(var(--hero-foreground))] transition-colors">Contact</a>
+              <a href="#solutions" className="text-sm text-gray-400 hover:text-white transition-colors">Solutions</a>
+              <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">Features</a>
+              <a href="#about" className="text-sm text-gray-400 hover:text-white transition-colors">About</a>
+              <a href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">Contact</a>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
                {isLoading? (
